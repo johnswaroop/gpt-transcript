@@ -2,32 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+.dotted {
+  background-color: #ffffff;
+  opacity: 0.5;
+  background-image: radial-gradient(#444cf7 1.2000000000000001px, #ffffff 1.2000000000000001px);
+  background-size: 38px 38px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+.move {
+  animation: move 200s linear infinite;
+}
+
+@keyframes move {
+  0% {
+    top: 0;
+    left: 0;
   }
-}
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  100% {
+    top: -100%;
+    left: -100%;
   }
 }
